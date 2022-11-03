@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <title>Concrete compressive Strength Predictor </title>
+</head>
+
+<style>
+        body {
+            background-color:white;
+            color: rgb(13, 3, 3);
+            text-align: left;
+            padding-right: 90px;
+        }
+
+
+
+
+
+        </style>
+
+<body>
+
+
+<br>
+<div  style="font-size: 18px">
+    <!-- Inputs to our model-->
+<form action="{{ url_for('predict')}} " method="post">
+  <label for="age"> <b>Age (in days) :</b> </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "number" style="color:black; background-color: white;"  id = "age" name = "age" placeholder = "Age of the concrete" required = "required" />
+    <br><br><br>
+    <label for= "cement"> <b>Cement (in kg) : </b> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "number" style="color:black; background-color: white;" step = "0.01" id= "cement" name = "cement" placeholder = "quantity" required = "required" />
+    <br><br><br>
+    <label for="water"> <b>Water (in Lt) :</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "number" style="color:black; background-color: white;"  step = "0.01" id = "water" name = "water" placeholder = "quantity " required = "required" />
+    <br><br><br>
+    <label for="fly_ash"><b>Fly ash (in kg) :</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "number" style="color:black; background-color: white;" step = "0.01" id = "fly_ash" name = "fa" placeholder= "quantity " required = "required" />
+    <br><br><br>
+    <label for="superplasticizer"> <b>Superplasticizer (in kg) :</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "number" style="color:black; background-color: white;" step = "0.01" id = "superplasticizer" name="sp" placeholder = "quantity " required = "required" />
+    <br><br><br>
+    <label for="blast_furnace_slag"> <b>Blast furnace slag (in kg) :</b> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "number" style="color:black; background-color: white;" step = "0.01" id = "blast_furnace_slag" name = "bfs" placeholder = "quantity " required = "required" />
+    <br><br><br>
+
+    <button type="submit" class="btn btn-primary btn-block btn-large" style="padding: 10px 15px; color:black; background-color: white;" >Predict</button>
+    {{ prediction_text }}
+    <br><br>
+<style>
+a:link, a:visited {
+  color: white;
+  padding: 2px 5px;
+  }
+
+
+</style>
+
+</div>
+
+
+
+</body>
+</html>
